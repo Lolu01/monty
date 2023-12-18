@@ -6,8 +6,6 @@
  * @counter: line_number
  * Return: no return
 */
-
-
 void f_div(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
@@ -19,7 +17,7 @@ void f_div(stack_t **head, unsigned int counter)
 		h = h->next;
 		len++;
 	}
-	if (len ==2)
+	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", counter);
 		fclose(bus.file);
@@ -27,7 +25,6 @@ void f_div(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	
 	h = *head;
 	if (h->n == 0)
 	{
